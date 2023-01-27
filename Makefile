@@ -136,8 +136,6 @@ UPROGS=\
 	$U/_fork0\
 	$U/_fork1\
 	$U/_fork2\
-	$U/_fork3\
-	$U/_fork4\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
