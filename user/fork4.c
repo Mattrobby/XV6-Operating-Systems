@@ -4,5 +4,6 @@
 
 void main (int argc, char*argv[]) {
 	exec(argv[1], ++argv);
-	// HaHa, theres a security issue since we don't check for 0 at the end
+	//  HaHa, theres a security issue here since we don't check for 0 at the end
+	//  TODO: fix the security issue
 }
