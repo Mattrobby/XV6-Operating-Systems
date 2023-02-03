@@ -10,5 +10,4 @@ void main(int argc, char*argv[]) {
 
 	wait(0);
 	exec("ls", argv);
-	exit(0); 
 }

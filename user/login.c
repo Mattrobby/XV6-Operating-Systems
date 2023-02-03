@@ -3,7 +3,15 @@
 #include "user/user.h"
 
 void main(int argc, char*argv[]) {
-	char username; 
-	scanf("Username: %s", username);
-	printf("%s", username);
+	char username[50]; 
+	char password[50]; 
+
+	printf("Username: ");
+	gets(username, sizeof(username));
+
+	printf("Password: "); 
+	gets(password, sizeof(password));
+
+	printf("Username: %s", username);
+	printf("Password: %s", password);
 }
