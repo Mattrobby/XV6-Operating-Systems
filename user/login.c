@@ -3,15 +3,33 @@
 #include "user/user.h"
 
 void main(int argc, char*argv[]) {
-	char username[50]; 
-	char password[50]; 
+	// Username and password endtered stored in the system
+	char storedUsername[] = "matthew\n"; 
+	char storedPassword[] = "password\n"; 
+	int auth = 0; 
 
-	printf("Username: ");
-	gets(username, sizeof(username));
+	while(auth != 1) {
+		// Username and password entered by the user
+		char username[20]; 
+		char password[20]; 
 
-	printf("Password: "); 
-	gets(password, sizeof(password));
+		printf("\nUsername: ");
+		gets(username, sizeof(username));
 
-	printf("Username: %s", username);
-	printf("Password: %s", password);
+		printf("Password: "); 
+		gets(password, sizeof(password));
+
+		int cmpUsername = strcmp(storedUsername, username) == 0; 
+		int cmpPassword = strcmp(storedPassword, password) == 0;
+
+
+
+		if (cmpUsername && cmpPassword) {
+			auth = 1; 
+		} 
+	}
+	
+	printf("\n"); 
+	exec("sh", argv); 
+
 }
