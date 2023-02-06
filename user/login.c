@@ -28,7 +28,9 @@ void main(int argc, char*argv[]) {
 
 		if (cmpUsername && cmpPassword) {
 			auth = 1; 
-		} 
+		} else {
+			sleep(10); 
+		}
 	}
 	
 	printf("\n"); 
