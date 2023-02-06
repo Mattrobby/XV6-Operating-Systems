@@ -127,6 +127,7 @@ runcmd(struct cmd *cmd)
     if(fork1() == 0)
       runcmd(bcmd->cmd);
     break;
+
   }
   exit(0);
 }
@@ -164,6 +165,9 @@ main(void)
       if(chdir(buf+3) < 0)
         fprintf(2, "cannot cd %s\n", buf+3);
       continue;
+    } 
+    if (buf[0] == 'e' && buf[1] == 'x' && buf[2] == 'i' && buf[3] == 't') {
+	    exit(0);
     }
     if(fork1() == 0)
       runcmd(parsecmd(buf));

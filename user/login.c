@@ -4,8 +4,8 @@
 
 void main(int argc, char*argv[]) {
 	// Username and password endtered stored in the system
-	char storedUsername[] = "matthew\n"; 
-	char storedPassword[] = "password\n"; 
+	char storedUsername[] = "matthew"; 
+	char storedPassword[] = "password"; 
 	int auth = 0; 
 
 	while(auth != 1) {
@@ -15,9 +15,11 @@ void main(int argc, char*argv[]) {
 
 		printf("\nUsername: ");
 		gets(username, sizeof(username));
+		username[strlen(username) - 1] = 0; 
 
 		printf("Password: "); 
 		gets(password, sizeof(password));
+		password[strlen(password) - 1] = 0; 
 
 		int cmpUsername = strcmp(storedUsername, username) == 0; 
 		int cmpPassword = strcmp(storedPassword, password) == 0;
