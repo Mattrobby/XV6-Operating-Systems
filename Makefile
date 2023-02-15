@@ -139,6 +139,7 @@ UPROGS=\
 	$U/_fork3\
 	$U/_fork4\
 	$U/_login\
+	$U/_benchmark\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
