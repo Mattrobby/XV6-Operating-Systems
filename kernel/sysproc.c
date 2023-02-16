@@ -89,3 +89,17 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+
+// return how many clock tick interrupts have occurred 
+// since start in seconds.
+uint64
+sys_uptime_seconds(void)
+{
+  uint xticks;
+
+  acquire(&tickslock);
+  xticks = ticks/100;
+  release(&tickslock);
+  return xticks;
+}
