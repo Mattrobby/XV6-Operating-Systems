@@ -4,12 +4,12 @@
 
 void main (int argc, char* argv[]) {
 	union{
-		uint i;
+		uint64 i;
 		double d;
 	} start;
 
 	union { 
-		uint i;
+		uint64 i;
 		double d; 
 	} end; 
 
