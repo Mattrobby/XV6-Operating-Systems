@@ -99,7 +99,13 @@ sys_uptime_seconds(void)
   uint xticks;
 
   acquire(&tickslock);
-  xticks = ticks/100;
+  union {
+	uint64 i; 
+	double d;
+  } answer;
+  
+  answer.d = ticks/8.0;
   release(&tickslock);
-  return xticks;
+
+  return answer.i;
 }
