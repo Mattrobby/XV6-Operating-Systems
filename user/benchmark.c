@@ -3,17 +3,28 @@
 #include "user/user.h"
 
 void main (int argc, char* argv[]) {
-	double start = uptime_seconds(); 
+	union{
+		int i;
+		double d;
+	} start;
+
+	union { 
+		int i;
+		double d; 
+	} end; 
+
+
+	start.i = uptime_seconds(); 
 
 	if (fork() == 0)
 		exec(argv[1], ++argv);
 
 	wait(0);
-	double end = uptime_seconds();
+	end.i = uptime_seconds();
 
-	printf("It took %f seconds to run\n", end-start); 
+	printf("It took %f seconds to run\n", end.d - start.d); 
 
-	printf("Start: %f \nEnd: %f \n", start, end);
+	printf("Start: %f \nEnd: %f \n", start.d, end.d);
 
 	//  HaHa, theres a security issue here since we don't check for 0 at the end
 	//  TODO: fix the security issue
