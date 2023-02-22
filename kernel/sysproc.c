@@ -96,8 +96,6 @@ sys_uptime(void)
 uint64
 sys_uptime_seconds(void)
 {
-  uint xticks;
-
   acquire(&tickslock);
   union {
 	uint64 i; 

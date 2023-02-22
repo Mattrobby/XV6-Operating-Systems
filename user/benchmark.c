@@ -25,7 +25,7 @@ void main (int argc, char* argv[]) {
 	double elapsed = end.d - start.d;
 	printf("Elapsed in ms: %d\n", elapsed*1000);
 
-	printf("It took %d.%d seconds to run\n", end.d - start.d, (start.d - (int)start.d) - (end.d - (int)end.d) * 100000); 
+	printf("It took %d.%d seconds to run\n", end.d - start.d, ((start.d - (int)start.d) - (end.d - (int)end.d)) * 100000); 
 
 	printf("Start: %d.%d \nEnd: %d.%d \n", start.d, (start.d - (int)start.d) * 100000, end.d, (end.d - (int)end.d) * 100000);
 
