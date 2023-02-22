@@ -22,9 +22,9 @@ void main (int argc, char* argv[]) {
 	wait(0);
 	end.i = uptime_seconds();
 
-	printf("It took %f seconds to run\n", end.d - start.d); 
+	printf("It took %lf seconds to run\n", end.d - start.d); 
 
-	printf("Start: %f \nEnd: %f \n", start.d, end.d);
+	printf("Start: %lf \nEnd: %lf \n", start.d, end.d);
 
 	//  HaHa, theres a security issue here since we don't check for 0 at the end
 	//  TODO: fix the security issue
