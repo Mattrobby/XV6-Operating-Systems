@@ -18,6 +18,8 @@ void main (int argc, char* argv[]) {
 
 	if (fork() == 0)
 		exec(argv[1], ++argv);
+		//  HaHa, theres a security issue here since we don't check for 0 at the end
+		//  TODO: fix the security issue
 
 	wait(0);
 	end.i = uptime_seconds();
@@ -29,6 +31,4 @@ void main (int argc, char* argv[]) {
 
 	printf("Start: %d.%d \nEnd: %d.%d \n", start.d, (start.d - (int)start.d) * 100000, end.d, (end.d - (int)end.d) * 100000);
 
-	//  HaHa, theres a security issue here since we don't check for 0 at the end
-	//  TODO: fix the security issue
 }
