@@ -15,6 +15,7 @@ r_mhartid()
 #define MSTATUS_MPP_M (3L << 11)
 #define MSTATUS_MPP_S (1L << 11)
 #define MSTATUS_MPP_U (0L << 11)
+#define MSTATUS_FP 0x0006000
 #define MSTATUS_MIE (1L << 3)    // machine-mode interrupt enable.
 
 static inline uint64

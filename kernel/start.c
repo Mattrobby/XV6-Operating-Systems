@@ -24,6 +24,7 @@ start()
   unsigned long x = r_mstatus();
   x &= ~MSTATUS_MPP_MASK;
   x |= MSTATUS_MPP_S;
+  x |= MSTATUS_FP;
   w_mstatus(x);
 
   // set M Exception Program Counter to main, for mret.
