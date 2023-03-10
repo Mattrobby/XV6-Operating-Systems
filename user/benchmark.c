@@ -3,6 +3,18 @@
 #include "user/user.h"
 
 void main (int argc, char* argv[]) {
+  
+  // Copying argv to new array and putting 0 at the end 
+  char* arguments[argc]; 
+
+  for (int i = 0; i < argc; i++) {
+    arguments[i] = argv[i+1];
+  }
+  
+  arguments[argc] = 0; 
+
+
+  // Unions since system calls can only return uint64
 	union{
 		uint64 i;
 		double d;
@@ -14,21 +26,15 @@ void main (int argc, char* argv[]) {
 	} end; 
 
 
+  // Tracking time 
 	start.i = uptime_seconds(); 
 
 	if (fork() == 0)
-		exec(argv[1], ++argv);
-		//  HaHa, theres a security issue here since we don't check for 0 at the end
-		//  TODO: fix the security issue
+		exec(argv[1], arguments);
 
 	wait(0);
 	end.i = uptime_seconds();
 
 	double elapsed = end.d - start.d;
-	printf("Elapsed in ms: %d\n", elapsed*1000);
-
-	printf("It took %d.%d seconds to run\n", end.d - start.d, ((start.d - (int)start.d) - (end.d - (int)end.d)) * 100000); 
-
-	printf("Start: %d.%d \nEnd: %d.%d \n", start.d, (start.d - (int)start.d) * 100000, end.d, (end.d - (int)end.d) * 100000);
-
+	printf("It took %d.%d seconds to run\n\n", (int)elapsed, ((start.d - (int)start.d) - (end.d - (int)end.d)) * 1000); 
 }

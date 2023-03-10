@@ -102,7 +102,7 @@ sys_uptime_seconds(void)
 	double d;
   } answer;
   
-  answer.d = ticks/100.0;
+  answer.d = ticks/9.0;
   release(&tickslock);
 
   return answer.i;
