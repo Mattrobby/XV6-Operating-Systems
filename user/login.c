@@ -4,8 +4,8 @@
 
 void main(int argc, char*argv[]) {
 	// Username and password endtered stored in the system
-	char storedUsername[] = "matthew"; 
-	char storedPassword[] = "password"; 
+	char storedUsername[] = ""; 
+	char storedPassword[] = ""; 
 	int auth = 0; 
 
 	while(auth != 1) {

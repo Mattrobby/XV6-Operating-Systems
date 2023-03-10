@@ -13,6 +13,5 @@ void main (int argc, char*argv[]) {
   arguments[argc] = 0; 
 
 	exec(argv[1], arguments);
-	//  HaHa, theres a security issue here since we don't check for 0 at the end
-	//  TODO: fix the security issue
 }
+
