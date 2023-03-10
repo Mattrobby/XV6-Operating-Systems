@@ -24,7 +24,7 @@ start()
   unsigned long x = r_mstatus();
   x &= ~MSTATUS_MPP_MASK;
   x |= MSTATUS_MPP_S;
-  x |= MSTATUS_FP;
+  x |= MSTATUS_FP; // Adding floating point numbers to XV6 
   w_mstatus(x);
 
   // set M Exception Program Counter to main, for mret.
